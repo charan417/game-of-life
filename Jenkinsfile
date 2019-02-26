@@ -3,7 +3,7 @@ pipeline {
   stages {
   stage('Build') {
   steps {
-  sh 'make' 
+   sh label: '', script: 'mvn package'
   archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
   }
   }
